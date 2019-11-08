@@ -1,0 +1,64 @@
+#include "ANO_Init.h"
+
+
+float maxt[9] = {0.5,1.5,2.5,3.5,1,4.5,2,1,1.1};
+float maxt2[9] = {0,0,0,0,0,0,0,0,0};
+float maxt3[9] = {0,0,0,0,0,0,0,0,0};
+float maxt4[9] = {0.5,1.5,2.5,3.5,1,4.5,2,1,1.1};
+float maxt5[9];
+arm_matrix_instance_f32 myS;
+arm_matrix_instance_f32 myS2;
+arm_matrix_instance_f32 myS3;
+arm_status maxcheck = ARM_MATH_TEST_FAILURE;
+void sys_init()
+{
+	//中断优先级组别设置
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_4);			//中断优先级组别设置	 (NVIC_PriorityGroup_4: 4 bits for pre-emption priority and 0 bits for subpriority)
+	
+	//初始化系统滴答定时器
+	cycleCounterInit();
+	SysTick_Config(SystemCoreClock / 1000);				   /*cnt = 72000:1ms滴答一次中断*/
+	
+	//led初始化
+	POSE_LED_Init();
+	LED_Flash_Duty(led_duty);
+	//i2c初始化
+	I2c_Soft_Init();
+	
+#if POSE_DT_USE_USART1
+	ANO_Uart1_Init(500000);					   /*作为数传接口*/
+#endif // POSE_DT_USE_USART1
+
+#if DL_DT_USE_USART3
+	ANO_UART3_Init(500000);					   /*zigbee模块接口*/
+#endif // DL_DT_USE_USART3
+
+	Delay_ms(100);
+
+#if MPU9250
+	Init_MPU9250(20, 20);
+	//参数初始化
+	POSE_Param_Read();
+#endif // MPU9250
+
+	Delay_ms(200);
+	
+#if DL_DT_USE_USART3
+	//DL_LN3X_INIT();
+	DL_LN3X_Check();
+#endif // DL_DT_USE_USART3
+
+    arm_mat_init_f32(&myS,3,3,maxt);
+    arm_mat_init_f32(&myS2,3,3,maxt2);
+    arm_mat_init_f32(&myS3,3,3,maxt3);
+    maxcheck = arm_mat_add_f32(&myS,&myS2,&myS3);
+    maxcheck = arm_mat_inverse_f32(&myS,&myS2);
+    arm_mat_init_f32(&myS3,3,3,maxt4);
+    arm_mat_init_f32(&myS,3,3,maxt5);
+    arm_mat_mult_f32(&myS3,&myS2,&myS);
+
+}
+
+/******************* (C) COPYRIGHT 2016 ANO TECH *****END OF FILE************/
+
+

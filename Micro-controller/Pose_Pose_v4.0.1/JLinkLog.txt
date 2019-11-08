@@ -1,0 +1,6 @@
+
+TD6E8 000:174 SEGGER J-Link V6.30h Log File (0000ms, 0004ms total)
+TD6E8 000:174 DLL Compiled: Mar 16 2018 18:02:51 (0000ms, 0004ms total)
+TD6E8 000:174 Logging started @ 2018-05-26 11:45 (0000ms, 0004ms total)
+TD6E8 000:174 JLINK_SetWarnOutHandler(...) (0000ms, 0004ms total)
+TD6E8 000:174 JLINK_OpenEx(...)

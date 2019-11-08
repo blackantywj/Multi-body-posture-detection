@@ -1,0 +1,24 @@
+.heade{
+	font-size: 30px;
+	background-color:rgba(255, 255, 255, 0.18);
+}
+
+.alignleft{
+	 right:125px;
+}
+
+
+.alignright{
+	 left:75px;
+}
+.button{
+	font-size:15px;
+	text-align:center;
+	border: 1px solid #222;
+    display: inline-block;
+    padding: 5px 15px;
+    transition: .3s;
+    width: 120px;
+	color:#222;
+}
+

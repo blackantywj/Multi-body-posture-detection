@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ANO_Settler" />
+    <Filter Include="Driver" />
+    <Filter Include="Driver\VL53L0X" />
+    <Filter Include="Driver\VL53L0X\core" />
+    <Filter Include="Driver\VL53L0X\core\inc" />
+    <Filter Include="Driver\VL53L0X\core\src" />
+    <Filter Include="Driver\VL53L0X\demo" />
+    <Filter Include="Driver\VL53L0X\platform" />
+    <Filter Include="Driver\VL53L0X\platform\inc" />
+    <Filter Include="Driver\VL53L0X\platform\src" />
+    <Filter Include="RTE" />
+    <Filter Include="STM32_LIB" />
+    <Filter Include="STM32_LIB\CMSIS" />
+    <Filter Include="STM32_LIB\LIB" />
+    <Filter Include="STM32_LIB\LIB\inc" />
+    <Filter Include="STM32_LIB\LIB\src" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ANO_Settler\ANO_Data.c">
+    <Filter>ANO_Settler</Filter>
+    </ClCompile>
+    <ClCompile Include="ANO_Settler\ANO_Data_Transfer.c">
+    <Filter>ANO_Settler</Filter>
+    </ClCompile>
+    <ClCompile Include="ANO_Settler\ANO_Init.c">
+    <Filter>ANO_Settler</Filter>
+    </ClCompile>
+    <ClCompile Include="ANO_Settler\ANO_Param.c">
+    <Filter>ANO_Settler</Filter>
+    </ClCompile>
+    <ClCompile Include="ANO_Settler\ANO_PID.c">
+    <Filter>ANO_Settler</Filter>
+    </ClCompile>
+    <ClCompile Include="ANO_Settler\filter.c">
+    <Filter>ANO_Settler</Filter>
+    </ClCompile>
+    <ClCompile Include="ANO_Settler\imu.c">
+    <Filter>ANO_Settler</Filter>
+    </ClCompile>
+    <ClCompile Include="ANO_Settler\loop.c">
+    <Filter>ANO_Settler</Filter>
+    </ClCompile>
+    <ClCompile Include="ANO_Settler\main.c">
+    <Filter>ANO_Settler</Filter>
+    </ClCompile>
+    <ClInclude Include="ANO_Settler\ANO_Config.h">
+    <Filter>ANO_Settler</Filter>
+    </ClInclude>
+    <ClInclude Include="ANO_Settler\ANO_Data.h">
+    <Filter>ANO_Settler</Filter>
+    </ClInclude>
+    <ClInclude Include="ANO_Settler\ANO_Data_Transfer.h">
+    <Filter>ANO_Settler</Filter>
+    </ClInclude>
+    <ClInclude Include="ANO_Settler\ANO_Init.h">
+    <Filter>ANO_Settler</Filter>
+    </ClInclude>
+    <ClInclude Include="ANO_Settler\ANO_Param.h">
+    <Filter>ANO_Settler</Filter>
+    </ClInclude>
+    <ClInclude Include="ANO_Settler\ANO_PID.h">
+    <Filter>ANO_Settler</Filter>
+    </ClInclude>
+    <ClInclude Include="ANO_Settler\filter.h">
+    <Filter>ANO_Settler</Filter>
+    </ClInclude>
+    <ClInclude Include="ANO_Settler\imu.h">
+    <Filter>ANO_Settler</Filter>
+    </ClInclude>
+    <ClInclude Include="ANO_Settler\include.h">
+    <Filter>ANO_Settler</Filter>
+    </ClInclude>
+    <ClInclude Include="ANO_Settler\loop.h">
+    <Filter>ANO_Settler</Filter>
+    </ClInclude>
+    <ClCompile Include="Driver\ANO_Drv_Flash.c">
+    <Filter>Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="Driver\ANO_Drv_LED.c">
+    <Filter>Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="Driver\ANO_Drv_MPU6050.c">
+    <Filter>Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="Driver\ANO_Drv_SPI.c">
+    <Filter>Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="Driver\ANO_Drv_Uart.c">
+    <Filter>Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="Driver\ANO_Drv_Uart3.c">
+    <Filter>Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="Driver\bsp_SysTick.c">
+    <Filter>Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="Driver\DL_LN3X.c">
+    <Filter>Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="Driver\i2c_soft.c">
+    <Filter>Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="Driver\ms5611.c">
+    <Filter>Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="Driver\mymath.c">
+    <Filter>Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="Driver\POSE_Drv_MPU9250.c">
+    <Filter>Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="Driver\stm32f10x_it.c">
+    <Filter>Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="Driver\time.c">
+    <Filter>Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="Driver\vl53l0x.c">
+    <Filter>Driver</Filter>
+    </ClCompile>
+    <ClInclude Include="Driver\ANO_Drv_Flash.h">
+    <Filter>Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\ANO_Drv_LED.h">
+    <Filter>Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\ANO_Drv_MPU6050.h">
+    <Filter>Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\ANO_Drv_SPI.h">
+    <Filter>Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\ANO_Drv_Uart.h">
+    <Filter>Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\ANO_Drv_Uart3.h">
+    <Filter>Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\bsp_SysTick.h">
+    <Filter>Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\DL_LN3X.h">
+    <Filter>Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\i2c_soft.h">
+    <Filter>Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\ms5611.h">
+    <Filter>Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\mymath.h">
+    <Filter>Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\POSE_Drv_MPU9250.h">
+    <Filter>Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\stm32f10x_it.h">
+    <Filter>Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\time.h">
+    <Filter>Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\vl53l0x.h">
+    <Filter>Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\VL53L0X\core\inc\vl53l0x_api.h">
+    <Filter>Driver\VL53L0X\core\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\VL53L0X\core\inc\vl53l0x_api_calibration.h">
+    <Filter>Driver\VL53L0X\core\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\VL53L0X\core\inc\vl53l0x_api_core.h">
+    <Filter>Driver\VL53L0X\core\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\VL53L0X\core\inc\vl53l0x_api_ranging.h">
+    <Filter>Driver\VL53L0X\core\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\VL53L0X\core\inc\vl53l0x_api_strings.h">
+    <Filter>Driver\VL53L0X\core\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\VL53L0X\core\inc\vl53l0x_def.h">
+    <Filter>Driver\VL53L0X\core\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\VL53L0X\core\inc\vl53l0x_device.h">
+    <Filter>Driver\VL53L0X\core\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\VL53L0X\core\inc\vl53l0x_interrupt_threshold_settings.h">
+    <Filter>Driver\VL53L0X\core\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\VL53L0X\core\inc\vl53l0x_tuning.h">
+    <Filter>Driver\VL53L0X\core\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\VL53L0X\core\inc\vl53l0x_types.h">
+    <Filter>Driver\VL53L0X\core\inc</Filter>
+    </ClInclude>
+    <ClCompile Include="Driver\VL53L0X\core\src\vl53l0x_api.c">
+    <Filter>Driver\VL53L0X\core\src</Filter>
+    </ClCompile>
+    <ClCompile Include="Driver\VL53L0X\core\src\vl53l0x_api_calibration.c">
+    <Filter>Driver\VL53L0X\core\src</Filter>
+    </ClCompile>
+    <ClCompile Include="Driver\VL53L0X\core\src\vl53l0x_api_core.c">
+    <Filter>Driver\VL53L0X\core\src</Filter>
+    </ClCompile>
+    <ClCompile Include="Driver\VL53L0X\core\src\vl53l0x_api_ranging.c">
+    <Filter>Driver\VL53L0X\core\src</Filter>
+    </ClCompile>
+    <ClCompile Include="Driver\VL53L0X\core\src\vl53l0x_api_strings.c">
+    <Filter>Driver\VL53L0X\core\src</Filter>
+    </ClCompile>
+    <ClCompile Include="Driver\VL53L0X\demo\vl53l0x_cali.c">
+    <Filter>Driver\VL53L0X\demo</Filter>
+    </ClCompile>
+    <ClCompile Include="Driver\VL53L0X\demo\vl53l0x_gen.c">
+    <Filter>Driver\VL53L0X\demo</Filter>
+    </ClCompile>
+    <ClCompile Include="Driver\VL53L0X\demo\vl53l0x_it.c">
+    <Filter>Driver\VL53L0X\demo</Filter>
+    </ClCompile>
+    <ClInclude Include="Driver\VL53L0X\demo\vl53l0x_cali.h">
+    <Filter>Driver\VL53L0X\demo</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\VL53L0X\demo\vl53l0x_gen.h">
+    <Filter>Driver\VL53L0X\demo</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\VL53L0X\demo\vl53l0x_it.h">
+    <Filter>Driver\VL53L0X\demo</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\VL53L0X\platform\inc\vl53l0x_platform.h">
+    <Filter>Driver\VL53L0X\platform\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver\VL53L0X\platform\inc\vl53l0x_platform_log.h">
+    <Filter>Driver\VL53L0X\platform\inc</Filter>
+    </ClInclude>
+    <ClCompile Include="Driver\VL53L0X\platform\src\vl53l0x_platform.c">
+    <Filter>Driver\VL53L0X\platform\src</Filter>
+    </ClCompile>
+    <ClInclude Include="RTE\RTE_Components.h">
+    <Filter>RTE</Filter>
+    </ClInclude>
+    <ClCompile Include="STM32_LIB\CMSIS\core_cm3.c">
+    <Filter>STM32_LIB\CMSIS</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\CMSIS\system_stm32f10x.c">
+    <Filter>STM32_LIB\CMSIS</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\CMSIS\startup_stm32f10x_cl.s">
+    <Filter>STM32_LIB\CMSIS</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\CMSIS\startup_stm32f10x_hd.s">
+    <Filter>STM32_LIB\CMSIS</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\CMSIS\startup_stm32f10x_hd_vl.s">
+    <Filter>STM32_LIB\CMSIS</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\CMSIS\startup_stm32f10x_ld.s">
+    <Filter>STM32_LIB\CMSIS</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\CMSIS\startup_stm32f10x_ld_vl.s">
+    <Filter>STM32_LIB\CMSIS</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\CMSIS\startup_stm32f10x_md.s">
+    <Filter>STM32_LIB\CMSIS</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\CMSIS\startup_stm32f10x_md_vl.s">
+    <Filter>STM32_LIB\CMSIS</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\CMSIS\startup_stm32f10x_xl.s">
+    <Filter>STM32_LIB\CMSIS</Filter>
+    </ClCompile>
+    <ClInclude Include="STM32_LIB\CMSIS\core_cm3.h">
+    <Filter>STM32_LIB\CMSIS</Filter>
+    </ClInclude>
+    <ClInclude Include="STM32_LIB\CMSIS\stm32f10x.h">
+    <Filter>STM32_LIB\CMSIS</Filter>
+    </ClInclude>
+    <ClInclude Include="STM32_LIB\CMSIS\system_stm32f10x.h">
+    <Filter>STM32_LIB\CMSIS</Filter>
+    </ClInclude>
+    <ClInclude Include="STM32_LIB\LIB\inc\misc.h">
+    <Filter>STM32_LIB\LIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_adc.h">
+    <Filter>STM32_LIB\LIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_bkp.h">
+    <Filter>STM32_LIB\LIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_can.h">
+    <Filter>STM32_LIB\LIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_cec.h">
+    <Filter>STM32_LIB\LIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_conf.h">
+    <Filter>STM32_LIB\LIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_crc.h">
+    <Filter>STM32_LIB\LIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_dac.h">
+    <Filter>STM32_LIB\LIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_dbgmcu.h">
+    <Filter>STM32_LIB\LIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_dma.h">
+    <Filter>STM32_LIB\LIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_exti.h">
+    <Filter>STM32_LIB\LIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_flash.h">
+    <Filter>STM32_LIB\LIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_fsmc.h">
+    <Filter>STM32_LIB\LIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_gpio.h">
+    <Filter>STM32_LIB\LIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_i2c.h">
+    <Filter>STM32_LIB\LIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_iwdg.h">
+    <Filter>STM32_LIB\LIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_pwr.h">
+    <Filter>STM32_LIB\LIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_rcc.h">
+    <Filter>STM32_LIB\LIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_rtc.h">
+    <Filter>STM32_LIB\LIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_sdio.h">
+    <Filter>STM32_LIB\LIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_spi.h">
+    <Filter>STM32_LIB\LIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_tim.h">
+    <Filter>STM32_LIB\LIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_usart.h">
+    <Filter>STM32_LIB\LIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_wwdg.h">
+    <Filter>STM32_LIB\LIB\inc</Filter>
+    </ClInclude>
+    <ClCompile Include="STM32_LIB\LIB\src\misc.c">
+    <Filter>STM32_LIB\LIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_adc.c">
+    <Filter>STM32_LIB\LIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_bkp.c">
+    <Filter>STM32_LIB\LIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_can.c">
+    <Filter>STM32_LIB\LIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_cec.c">
+    <Filter>STM32_LIB\LIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_crc.c">
+    <Filter>STM32_LIB\LIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_dac.c">
+    <Filter>STM32_LIB\LIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_dbgmcu.c">
+    <Filter>STM32_LIB\LIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_dma.c">
+    <Filter>STM32_LIB\LIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_exti.c">
+    <Filter>STM32_LIB\LIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_flash.c">
+    <Filter>STM32_LIB\LIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_fsmc.c">
+    <Filter>STM32_LIB\LIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_gpio.c">
+    <Filter>STM32_LIB\LIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_i2c.c">
+    <Filter>STM32_LIB\LIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_iwdg.c">
+    <Filter>STM32_LIB\LIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_pwr.c">
+    <Filter>STM32_LIB\LIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_rcc.c">
+    <Filter>STM32_LIB\LIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_rtc.c">
+    <Filter>STM32_LIB\LIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_sdio.c">
+    <Filter>STM32_LIB\LIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_spi.c">
+    <Filter>STM32_LIB\LIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_tim.c">
+    <Filter>STM32_LIB\LIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_usart.c">
+    <Filter>STM32_LIB\LIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_wwdg.c">
+    <Filter>STM32_LIB\LIB\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

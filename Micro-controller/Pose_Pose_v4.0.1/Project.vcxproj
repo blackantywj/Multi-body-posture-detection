@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2F91FE68-F5D2-4C86-9323-882D64B61895}</ProjectGuid>
+    <RootNamespace>Project2</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>POSE_POSE_v4.0.1</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>USE_STDPERIPH_DRIVER;STM32F10X_HD;__CC_ARM</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      <IncludePath>.\ANO_Settler;.\Driver;.\Driver\VL53L0X\core\inc;.\Driver\VL53L0X\demo;.\Driver\VL53L0X\platform\inc;.\RTE;.\STM32_LIB\CMSIS;.\STM32_LIB\LIB\inc;D:\Program Files\Keil_v5\ARM\ARMCC\include</IncludePath>
+      <ReferencePath />
+      <LibraryPath />
+      <LibraryWPath />
+      <ExcludePath />
+      <SourcePath />
+    </PropertyGroup>
+  <ItemGroup>
+    <ClCompile Include="ANO_Settler\ANO_Data.c" />
+    <ClCompile Include="ANO_Settler\ANO_Data_Transfer.c" />
+    <ClCompile Include="ANO_Settler\ANO_Init.c" />
+    <ClCompile Include="ANO_Settler\ANO_Param.c" />
+    <ClCompile Include="ANO_Settler\ANO_PID.c" />
+    <ClCompile Include="ANO_Settler\filter.c" />
+    <ClCompile Include="ANO_Settler\imu.c" />
+    <ClCompile Include="ANO_Settler\loop.c" />
+    <ClCompile Include="ANO_Settler\main.c" />
+    <ClInclude Include="ANO_Settler\ANO_Config.h" />
+    <ClInclude Include="ANO_Settler\ANO_Data.h" />
+    <ClInclude Include="ANO_Settler\ANO_Data_Transfer.h" />
+    <ClInclude Include="ANO_Settler\ANO_Init.h" />
+    <ClInclude Include="ANO_Settler\ANO_Param.h" />
+    <ClInclude Include="ANO_Settler\ANO_PID.h" />
+    <ClInclude Include="ANO_Settler\filter.h" />
+    <ClInclude Include="ANO_Settler\imu.h" />
+    <ClInclude Include="ANO_Settler\include.h" />
+    <ClInclude Include="ANO_Settler\loop.h" />
+    <ClCompile Include="Driver\ANO_Drv_Flash.c" />
+    <ClCompile Include="Driver\ANO_Drv_LED.c" />
+    <ClCompile Include="Driver\ANO_Drv_MPU6050.c" />
+    <ClCompile Include="Driver\ANO_Drv_SPI.c" />
+    <ClCompile Include="Driver\ANO_Drv_Uart.c" />
+    <ClCompile Include="Driver\ANO_Drv_Uart3.c" />
+    <ClCompile Include="Driver\bsp_SysTick.c" />
+    <ClCompile Include="Driver\DL_LN3X.c" />
+    <ClCompile Include="Driver\i2c_soft.c" />
+    <ClCompile Include="Driver\ms5611.c" />
+    <ClCompile Include="Driver\mymath.c" />
+    <ClCompile Include="Driver\POSE_Drv_MPU9250.c" />
+    <ClCompile Include="Driver\stm32f10x_it.c" />
+    <ClCompile Include="Driver\time.c" />
+    <ClCompile Include="Driver\vl53l0x.c" />
+    <ClInclude Include="Driver\ANO_Drv_Flash.h" />
+    <ClInclude Include="Driver\ANO_Drv_LED.h" />
+    <ClInclude Include="Driver\ANO_Drv_MPU6050.h" />
+    <ClInclude Include="Driver\ANO_Drv_SPI.h" />
+    <ClInclude Include="Driver\ANO_Drv_Uart.h" />
+    <ClInclude Include="Driver\ANO_Drv_Uart3.h" />
+    <ClInclude Include="Driver\bsp_SysTick.h" />
+    <ClInclude Include="Driver\DL_LN3X.h" />
+    <ClInclude Include="Driver\i2c_soft.h" />
+    <ClInclude Include="Driver\ms5611.h" />
+    <ClInclude Include="Driver\mymath.h" />
+    <ClInclude Include="Driver\POSE_Drv_MPU9250.h" />
+    <ClInclude Include="Driver\stm32f10x_it.h" />
+    <ClInclude Include="Driver\time.h" />
+    <ClInclude Include="Driver\vl53l0x.h" />
+    <ClInclude Include="Driver\VL53L0X\core\inc\vl53l0x_api.h" />
+    <ClInclude Include="Driver\VL53L0X\core\inc\vl53l0x_api_calibration.h" />
+    <ClInclude Include="Driver\VL53L0X\core\inc\vl53l0x_api_core.h" />
+    <ClInclude Include="Driver\VL53L0X\core\inc\vl53l0x_api_ranging.h" />
+    <ClInclude Include="Driver\VL53L0X\core\inc\vl53l0x_api_strings.h" />
+    <ClInclude Include="Driver\VL53L0X\core\inc\vl53l0x_def.h" />
+    <ClInclude Include="Driver\VL53L0X\core\inc\vl53l0x_device.h" />
+    <ClInclude Include="Driver\VL53L0X\core\inc\vl53l0x_interrupt_threshold_settings.h" />
+    <ClInclude Include="Driver\VL53L0X\core\inc\vl53l0x_tuning.h" />
+    <ClInclude Include="Driver\VL53L0X\core\inc\vl53l0x_types.h" />
+    <ClCompile Include="Driver\VL53L0X\core\src\vl53l0x_api.c" />
+    <ClCompile Include="Driver\VL53L0X\core\src\vl53l0x_api_calibration.c" />
+    <ClCompile Include="Driver\VL53L0X\core\src\vl53l0x_api_core.c" />
+    <ClCompile Include="Driver\VL53L0X\core\src\vl53l0x_api_ranging.c" />
+    <ClCompile Include="Driver\VL53L0X\core\src\vl53l0x_api_strings.c" />
+    <ClCompile Include="Driver\VL53L0X\demo\vl53l0x_cali.c" />
+    <ClCompile Include="Driver\VL53L0X\demo\vl53l0x_gen.c" />
+    <ClCompile Include="Driver\VL53L0X\demo\vl53l0x_it.c" />
+    <ClInclude Include="Driver\VL53L0X\demo\vl53l0x_cali.h" />
+    <ClInclude Include="Driver\VL53L0X\demo\vl53l0x_gen.h" />
+    <ClInclude Include="Driver\VL53L0X\demo\vl53l0x_it.h" />
+    <ClInclude Include="Driver\VL53L0X\platform\inc\vl53l0x_platform.h" />
+    <ClInclude Include="Driver\VL53L0X\platform\inc\vl53l0x_platform_log.h" />
+    <ClCompile Include="Driver\VL53L0X\platform\src\vl53l0x_platform.c" />
+    <ClInclude Include="RTE\RTE_Components.h" />
+    <ClCompile Include="STM32_LIB\CMSIS\core_cm3.c" />
+    <ClCompile Include="STM32_LIB\CMSIS\system_stm32f10x.c" />
+    <ClCompile Include="STM32_LIB\CMSIS\startup_stm32f10x_cl.s" />
+    <ClCompile Include="STM32_LIB\CMSIS\startup_stm32f10x_hd.s" />
+    <ClCompile Include="STM32_LIB\CMSIS\startup_stm32f10x_hd_vl.s" />
+    <ClCompile Include="STM32_LIB\CMSIS\startup_stm32f10x_ld.s" />
+    <ClCompile Include="STM32_LIB\CMSIS\startup_stm32f10x_ld_vl.s" />
+    <ClCompile Include="STM32_LIB\CMSIS\startup_stm32f10x_md.s" />
+    <ClCompile Include="STM32_LIB\CMSIS\startup_stm32f10x_md_vl.s" />
+    <ClCompile Include="STM32_LIB\CMSIS\startup_stm32f10x_xl.s" />
+    <ClInclude Include="STM32_LIB\CMSIS\core_cm3.h" />
+    <ClInclude Include="STM32_LIB\CMSIS\stm32f10x.h" />
+    <ClInclude Include="STM32_LIB\CMSIS\system_stm32f10x.h" />
+    <ClInclude Include="STM32_LIB\LIB\inc\misc.h" />
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_adc.h" />
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_bkp.h" />
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_can.h" />
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_cec.h" />
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_conf.h" />
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_crc.h" />
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_dac.h" />
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_dbgmcu.h" />
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_dma.h" />
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_exti.h" />
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_flash.h" />
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_fsmc.h" />
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_gpio.h" />
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_i2c.h" />
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_iwdg.h" />
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_pwr.h" />
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_rcc.h" />
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_rtc.h" />
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_sdio.h" />
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_spi.h" />
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_tim.h" />
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_usart.h" />
+    <ClInclude Include="STM32_LIB\LIB\inc\stm32f10x_wwdg.h" />
+    <ClCompile Include="STM32_LIB\LIB\src\misc.c" />
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_adc.c" />
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_bkp.c" />
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_can.c" />
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_cec.c" />
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_crc.c" />
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_dac.c" />
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_dbgmcu.c" />
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_dma.c" />
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_exti.c" />
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_flash.c" />
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_fsmc.c" />
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_gpio.c" />
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_i2c.c" />
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_iwdg.c" />
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_pwr.c" />
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_rcc.c" />
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_rtc.c" />
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_sdio.c" />
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_spi.c" />
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_tim.c" />
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_usart.c" />
+    <ClCompile Include="STM32_LIB\LIB\src\stm32f10x_wwdg.c" />
+  </ItemGroup>
+  </Project>

@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>person_pose_estimator</title>
+    <script src="../static/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+            //以下是获取原有div的内容再添加到动态生成的div中
+            var divs = 0,number = 0;//divs是创建各个控件时赋值变量ID所用，number是计数用
+            var str = "请输入姓名";
+            //自动执行脚本，将读取到的数据库信息显示出来
+var number = 0;//number用于存放元素个数
+var display_status = true;
+var update_1 = 0;
+interval_1 = setInterval(update1, 250); //每0.3秒执行一次数据更新
+                $.ajax({
+                type: 'GET',
+                url: '/api/',
+                success:function (res) {
+                  console.log(res.data)
+                    var id="";//用于临时存放id与姓名
+                    var nam="";
+                  var i=0;
+                  var num = res.data['number'];
+                  number=num;
+                  for(;i<num;i++){//显示数据库信息
+                      id=res.data[String(i)].slice(0,1);
+                      nam=res.data[String(i)].slice(1);
+                      console.log(nam);
+                      var oDiv = document.createElement("div");
+                      document.getElementById("parent").appendChild(oDiv);
+                      oDiv.id = "div_" + i;
+                      oDiv.className = "col-sm-4";
+                      var _div = document.getElementById("father").innerHTML;
+                      console.log(document.getElementById("father"));
+                    // document.getElementById(oDiv.id).innerHTML = _div;
+                      var list = document.getElementById(oDiv.id);
+                      document.getElementById(oDiv.id).innerHTML = _div;
+                    //console.log(div_0);
+                      var x = document.getElementsByTagName("span")[i*2+2];
+                      console.log(x);
+                      x.innerHTML=nam;
+                      var y = document.getElementsByClassName("people_pose")[i+1];
+                      console.log(y);
+                      y.id="People"+id;
+                      var z = document.getElementsByClassName("close")[i+1];
+                      z.id="close"+id;
+                  }
+                }
+            });
+            function addDiv() {
+                var str = "请输入姓名";
+                var str2 = "请输入ID";
+                var name = prompt(str,"Z.chao");
+                if(name==null) return;
+                var ID = prompt(str2,"1");
+                if(ID==null) return;
+                var info = name+ID;
+                console.log(info);
+                $.ajax({
+                  type: 'POST',
+                  url: '/api/',
+                  data: {'data': info},
+                  success: function (res) {
+                    alert("添加成功！");
+                  }
+                })
+                window.location.reload();
+            }
+            function remove(element) {
+              var del_id = element.id;
+              $.ajax({
+                  type: 'POST',
+                  url: '/api2/',
+                  data: {'data': del_id},
+                  success: function (res) {
+                    alert("成功！");
+                  }
+                })
+              window.location.reload();
+            }
+//检查一遍所有的div
+//check函数用于检查所有div是否有异常，正常情况下括号内应该检查是否为“INormal”，这里为了突出效果
+            function check() {
+              var j=0;
+              for(;j<number;j++) {
+                  var status_info = document.getElementsByClassName("people_pose")[j + 1].textContent;
+                  console.log(status_info);
+                  if (status_info == "Innormal") {
+                      var mm = document.getElementsByClassName("card")[j + 1];
+                      blink(mm);
+                      plysond();
+                  }
+                  if(status_info == "Normal"){
+                    var mm = document.getElementsByClassName("card")[j + 1];
+                    mm.className="card border-success mb-3";
+                  }//恢复正常显示
+              }
+            }
+           function plysond() {
+                var pl = document.getElementById("snd").play();
+                console.log(pl)
+            }
+//数据更新      
+      function update(){
+	  $.ajax({
+			type: "GET",
+			url: "/api/",
+			success:function (res){
+			console.log(res.data) 
+				  var id="";//用于临时存放id与姓名
+                  var i=0;
+                  var num = res.data['number'];
+                  number=num;
+				  for(;i<num;i++){
+				  id=res.data[String(i)].slice(0,1);
+				  $.ajax({
+						type: "POST",
+						url: "/api3/",
+						data: {'data': id},
+						success:function (res) {
+							console.log(res.data)
+							new_status = res.data["status"];//传过来的状态信息
+							console.log(new_status)
+							updateID = res.data["id"];//设备号ID
+							eleID = "People"+updateID;//确认需要修改的病人信息id
+							var personStatus = document.getElementById(eleID);
+							console.log(personStatus.innerHTML);
+							personStatus.innerHTML = new_status;        
+						 }
+				  });
+				  }
+			
+			//console.log(roll)
+			//console.log(pitch)
+			}
+		});
+	}
+//边框闪烁
+	function update1(){
+				  $.ajax({
+						type: "POST",
+						url: "/api3/",
+						 success:function (res) {
+						 console.log(res.data)
+						    	id = res.data["id"]
+							pitch = res.data["pitch"]
+							status = res.data["status"]
+							eleID = "People"+id;//确认需要修改的病人信息id
+							console.log(eleID)
+							var personStatus = document.getElementById(eleID);
+							if (display_status == true)
+								personStatus.innerHTML = "<p>" + String(status);
+							else
+								personStatus.innerHTML = "<p>" + String(pitch);
+							console.log(personStatus.innerHTML);
+						 }
+		});
+	}
+	function update2(){
+		display_status = !display_status;
+	}
+	function blink(m){
+                console.log(m);
+                var t = 0;
+                for(;t<30;t++){
+                    if(t%2==0){
+                    setTimeout(function(){m.className="card border-dark mb-3"},100*t);
+                    }
+                  if(t%2==1){
+                    setTimeout(function(){m.className="card border-danger mb-3"},100*t);
+                  }
+                }
+                setTimeout(function(){m.className="card border-succcess mb-3"},100*t)
+            }
+			//闪烁完毕后恢复正常
+            var down_time = 0;
+            var up_time = 0;
+            function setting(){
+			//定时功能，假如起始时间晚于结束时间，则结束时间按第二天的算
+                var start = document.getElementById("strat").value;
+                var end = document.getElementById("end").value;
+                var start_h = parseInt(start.toString().slice(0,2))
+                var end_h = parseInt(end.toString().slice(0,2))
+                var start_m= parseInt(start.toString().slice(3))
+                var end_m= parseInt(start.toString().slice(3))
+                var down_mins = start_h*60+start_m;
+                var up_mins = end_h*60+end_m;
+                down_time=down_mins;
+                up_time= up_mins;
+            }
+            function check_time(){
+              var date_hour=new Date().getHours();
+              var date_min=new Date().getMinutes();
+              var now_mins = date_hour*60+date_min;
+              console.log(down_time);
+              console.log(up_time);
+              //一天之内
+              if(down_time<up_time) {
+                if (now_mins >= down_time && now_mins <= up_time && down_time != 0) {
+                  check();
+                }
+              }
+              //过十二点
+              else{
+                if (now_mins <= up_time || now_mins >= down_time && down_time != 0) {
+                  check();
+                }
+              }
+            }
+            //每过三秒检查一遍所有人
+            setInterval(check_time, 3000);
+        </script>
+
+
+
+
+  </head>
+
+<Audio id="snd"  src="../static/warning.wav" /></Audio>
+  <h1 class="page-header" align="center">多人体姿态监护</h1>
+    <div id="rows1" class="container">
+      <div id="parent" class="row">
+        <div id="father" class="col-sm-4">
+          <div class="card border-success mb-3" style="max-width: 18rem;border-width: 5px;">
+            <div class="card-header">
+              <span>Z.chao</span>
+              <button id="close" type="button" class="close" onclick="remove(this)" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="card-body text-success">
+              <h1 class="card-title text-center people_pose">Normal</h1>
+              <p class="card-text invisible">Some quick example text to build on the card title and make up the.</p>
+            </div>
+          </div>
+       </div>
+
+        </div>
+      </div>
+
+
+  <div class="container">
+    <div class="row">
+       <div id="last2" class="col-sm-4">
+          <div class="card bg-light mb-3" style="max-width: 18rem;">
+            <!-- Image trigger modal -->
+            <!-- <img class="card-img-top" src="../static/img/initial.png" alt="Card image cap" data-toggle="modal" data-target="#exampleModalCenter"> -->
+           <img onclick="addDiv()" class="card-img-top" src="../static/img/initial.png" >
+
+          </div>
+        </div>
+    </div>
+  </div>
+  <label>开始时间：</label><input id="strat" type="time"/>
+  <label>结束时间：</label><input id="end" type="time"/>
+  <input type="button" value="提交" onclick="setting()"/>
+  			  <button id="change" type="button" class="change" onclick="update2()">
+			  display data
+              </button>
+      <!-- Optional JavaScript -->
+<!--    &lt;!&ndash; jQuery first, then Popper.js, then Bootstrap JS &ndash;&gt;-->
+<!--    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+<!--    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>-->
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
