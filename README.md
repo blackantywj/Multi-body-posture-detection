@@ -6,7 +6,6 @@ Also, in order to test conveniently, we have studied two versions of hardware, [
 
 Now, Let's start to introduce the file structure of our project. Generally, our project is divided into three parts, with micro-controller(sensors, receivers and et. al.), Gateway(pi), and Server(web server).
 
-https://zhuanlan.zhihu.com/p/360988428
 
 ## Get Started
 
